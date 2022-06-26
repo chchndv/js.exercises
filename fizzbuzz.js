@@ -16,7 +16,6 @@ for (var i = 1; i < 101; i++) {
   arr.push(i);
 }
 
-//with ternary operator
 for (let num of arr) {
   arr[num] % 3 !== 0 && arr[num] % 5 !== 0
     ? ""
@@ -25,19 +24,6 @@ for (let num of arr) {
     : arr[num] % 3 !== 0 && arr[num] % 5 === 0
     ? (arr[num] = "Buzz")
     : (arr[num] = "FizzBuzz");
-}
-
-//same with if-else
-for (let num of arr) {
-  if (arr[num] % 3 !== 0 && arr[num] % 5 !== 0) {
-    continue;
-  } else if (arr[num] % 3 === 0 && arr[num] % 5 !== 0) {
-    arr[num] = "Fizz";
-  } else if (arr[num] % 3 !== 0 && arr[num] % 5 === 0) {
-    arr[num] = "Buzz";
-  } else {
-    arr[num] = "FizzBuzz";
-  }
 }
 
 arr.forEach((x) => console.log(x));

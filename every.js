@@ -8,13 +8,12 @@ as parameters. Write two versions, one using a loop and one using the some().
 
 "use strict";
 
-let arr = [2, 4, 3];
-
 //for loop version
 function myEvery(arr, callback) {
   let every = true;
   for (let el of arr) {
     callback(el) ? "" : (every = false);
+    if (!every) break;
   }
   return every;
 }
@@ -32,4 +31,8 @@ function myEvery(arr, callback) {
   return every;
 }
 
-console.log(myEvery(arr, (x) => x > 1 && x < 5)); //-> true
+let arr = [1, 2, 3];
+const callback = (x) => x < 5;
+console.log(myEvery(arr, callback)); //-> true
+arr.push(6);
+console.log(myEvery(arr, callback)); //-> false
